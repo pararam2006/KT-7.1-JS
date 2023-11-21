@@ -108,6 +108,11 @@ function updateUser() {
 function deleteUser() {
     let question = +prompt('Какого пользователя вы хотели бы удалить? (id)');
     users.splice(question - 1, 1);
+    let i = 1;
+    for(let user of users) {
+        user.id = i;
+        i++
+    }
     console.log(`Удален пользователь с id = ${question}`)
     for(let i = 0; i < users.length; i++) {
         console.log(`id: ${users[i].id}, name: ${users[i].name}, lastname: ${users[i].lastname}, age: ${users[i].age}`);
